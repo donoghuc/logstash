@@ -10,6 +10,9 @@ export GRADLE_OPTS="-Xmx2g -Dorg.gradle.jvmargs=-Xmx2g -Dorg.gradle.daemon=false
 export SPEC_OPTS="--order rand --format documentation"
 export CI=true
 
+# Source shared function for splitting integration tests
+source "$(dirname "${BASH_SOURCE[0]}")/get-test-half.sh"
+
 if [ -n "$BUILD_JAVA_HOME" ]; then
   GRADLE_OPTS="$GRADLE_OPTS -Dorg.gradle.java.home=$BUILD_JAVA_HOME"
 fi
