@@ -163,7 +163,7 @@ describe "CLI > logstash-plugin install" do
     end
   end
 
-  context "rubygems hosted plugin" do
+  context "rubygems hosted plugin", :skip_fips do
     include_context "pluginmanager validation helpers"
     shared_context("install over existing") do
       before(:each) do
